@@ -1,7 +1,41 @@
-const http = require('http');
+//show file list
+const fs = require('fs')
 
-http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'application\json' });
-    res.write(JSON.stringify({ name: 'Ajay', email: 'ajay@test.com' }));
-    res.end();
-}).listen(3000)
+const path = require('path');
+const dirPath = path.join(__dirname, 'files');
+
+// for (i = 0; i < 5; i++) {
+//     fs.writeFileSync(dirPath + "/hello" + i + ".txt", "a simple file");
+// }
+
+fs.readdir(dirPath, (err, files) => {
+    files.forEach((item) => {
+        console.log(item)
+    })
+})
+
+
+
+// const http = require('http');
+// const data = require('./data.js')
+
+// http.createServer((req, res) => {
+//     res.writeHead(200, { 'Content-Type': 'application\json' });
+//     res.write(JSON.stringify(data));
+//     res.end();
+// }).listen(3000)
+
+//Input from command line example
+
+// const fs = require('fs');
+
+// const input = process.argv;
+
+// if (input[2] == 'add') {
+//     fs.writeFileSync(input[3], input[4]);
+// } else if (input[2] == 'remove') {
+//     fs.unlinkSync(input[3])
+// } else {
+//     console.log('invalid input')
+// }
+
