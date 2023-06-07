@@ -15,5 +15,9 @@
     "tutorial"
   ],
   "author": "12ajayvishwa",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "colors": "^1.4.0"
+  }
 }

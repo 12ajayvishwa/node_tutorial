@@ -1,8 +1,3 @@
-const http = require('http');
+const chalk = require('chalk')
 
-function dataControl(req, res) {
-    res.write('<h3>Hello this is ajay</h3>');
-    res.end();
-}
-
-http.createServer(dataControl).listen(3000);
+console.log(chalk.blue('Hello world!'));
