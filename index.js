@@ -1,37 +1,79 @@
-//Crud with file system
-const fs = require('fs');
-const path = require('path');
-const dirPath = path.join(__dirname, 'crud');
-const filePath = `${dirPath}/apple.txt`
+const express = require('express');
+const app = express();
 
-//fs.writeFileSync(filePath,'This is a simple text file');
-// fs.readFile(filePath, 'utf8', (err, item) => {
-//     console.log(item);
-// })
-fs.appendFile(filePath, 'and file name is apple.txt', (err) => {
-    if (!err) console.log('file is updated')
-})
+app.get('', (req, res) => {
+    res.send(
+        `<h1>Welcome, to home page<h1/><a href="/about">Go to About Page</a>`
+    )
+});
+
+app.get('/about', (req, res) => {
+    res.send(
+        `<input type = "text" placeholder="Username"/>
+        <button>Click me<button/>
+        <a href="/">Go to Home Page</a>`
+    )
+});
+app.get('/help', (req, res) => {
+    res.send('Hello this is help')
+});
+
+app.listen(5000);
 
 
 
 
 
 
-//show file list
-// const fs = require('fs')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //Crud with file system
+// const fs = require('fs');
 // const path = require('path');
-// const dirPath = path.join(__dirname, 'files');
+// const dirPath = path.join(__dirname, 'crud');
+// const filePath = `${dirPath}/apple.txt`
 
-// for (i = 0; i < 5; i++) {
-//     fs.writeFileSync(dirPath + "/hello" + i + ".txt", "a simple file");
-// }
-
-// fs.readdir(dirPath, (err, files) => {
-//     files.forEach((item) => {
-//         console.log(item)
-//     })
+// //fs.writeFileSync(filePath,'This is a simple text file');
+// // fs.readFile(filePath, 'utf8', (err, item) => {
+// //     console.log(item);
+// // })
+// fs.appendFile(filePath, 'and file name is apple.txt', (err) => {
+//     if (!err) console.log('file is updated')
 // })
+
+
+
+
+
+
+// //show file list
+// // const fs = require('fs')
+
+// // const path = require('path');
+// // const dirPath = path.join(__dirname, 'files');
+
+// // for (i = 0; i < 5; i++) {
+// //     fs.writeFileSync(dirPath + "/hello" + i + ".txt", "a simple file");
+// // }
+
+// // fs.readdir(dirPath, (err, files) => {
+// //     files.forEach((item) => {
+// //         console.log(item)
+// //     })
+// // })
 
 
 
@@ -44,17 +86,17 @@ fs.appendFile(filePath, 'and file name is apple.txt', (err) => {
 //     res.end();
 // }).listen(3000)
 
-//Input from command line example
+// //Input from command line example
 
-// const fs = require('fs');
+// // const fs = require('fs');
 
-// const input = process.argv;
+// // const input = process.argv;
 
-// if (input[2] == 'add') {
-//     fs.writeFileSync(input[3], input[4]);
-// } else if (input[2] == 'remove') {
-//     fs.unlinkSync(input[3])
-// } else {
-//     console.log('invalid input')
-// }
+// // if (input[2] == 'add') {
+// //     fs.writeFileSync(input[3], input[4]);
+// // } else if (input[2] == 'remove') {
+// //     fs.unlinkSync(input[3])
+// // } else {
+// //     console.log('invalid input')
+// // }
 
